@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+                xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+                layout:decorate="~{layout}"
+>
+<head>
+    <meta charset="UTF-8">
+    <title>Edit</title>
+</head>
+<body>
+<div class="m-3" layout:fragment="content">
+
+  <div class="card">
+    <form th:action="@{patientEdited(id=${patient.getIdentifiant()})}" th:method="put" th:object="${patient}">
+      <div class="card-header"><h1 class="d-inline">Edit participant </h1> <span class="fs-1" th:text="${'#' + patient.Identifiant}"></span> </div>
+      <div class="card-body" >
+
+        <label>Name: </label>
+        <div class="row">
+          <div class="col-2">
+            <input type="text" class="d-block mb-3 form-control"  th:value="${patient.Name}" placeholder="Enter your name..." name="name">
+
+          </div>
+        </div>
+
+        <label>Last name: </label>
+        <div class="row">
+          <div class="col-2">
+            <input type="text" class="d-block mb-3 form-control" th:value="${patient.LastName}" placeholder="Enter your last name..." name="lastName">
+
+          </div>
+        </div>
+
+        <label>Date of birthday: </label>
+        <div class="row">
+          <div class="col-2">
+            <input type="date" class="d-block mb-3 form-control" name="dateBirth" th:field="${patient.DateBirth}">
+          </div>
+        </div>
+
+        <label>Sick: </label>
+        <div class="row g-3">
+          <div class=" col-auto me-auto">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="malade" id="flexRadioDefault1" th:value="true" th:field="${patient.Malade}">
+              <label class="form-check-label" for="flexRadioDefault1" >
+                Yes
+              </label>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="malade" id="flexRadioDefault2" th:value="false" th:field="${patient.Malade}" checked>
+              <label class="form-check-label" for="flexRadioDefault2" >
+                No
+              </label>
+            </div>
+          </div>
+        </div>
+
+
+        <label class="d-block">Score : <span id="scoreValue" th:text="${patient.Score}"></span></label>
+
+        <div class="row">
+          <div class="col-3">
+            <input type="range" class="form-range" min="0" max="10000" id="customRange1" th:field="${patient.Score}" oninput="updateScoreValue(this.value)">
+          </div>
+        </div>
+
+        <script>
+          function updateScoreValue(value) {
+            document.getElementById('scoreValue').innerText = value;
+          }
+        </script>
+
+
+      </div>
+
+      <div class="card-footer">
+        <button class="btn btn-primary" type="submit">Save</button>
+      </div>
+    </form>
+  </div>
+</div>
+</body>
+</html>
