@@ -1,0 +1,1 @@
+Lien du problème résolue: https://stackoverflow.com/questions/48614773/spring-boot-validation-annotations-valid-and-notblank-not-working?answertab=modifieddesc#tab-top

@@ -19,8 +19,8 @@
                     <div class="row">
                         <div class="col-2">
                             <input type="text" class="d-block mb-3 form-control"  placeholder="Enter your name..." name="name">
-                            <span th:errors="${patient.Name}"></span>
-                            <span th:text="${patient.Name}"></span>
+                            <td th:errors="*{name}" class="text-danger">Name Error</td>
+
                         </div>
                     </div>
 
@@ -28,8 +28,8 @@
                     <div class="row">
                         <div class="col-2">
                             <input type="text" class="d-block mb-3 form-control"  placeholder="Enter your last name..." name="lastName">
-                            <span th:errors="${patient.LastName}"></span>
-                            <span th:text="${patient.LastName}"></span>
+                            <span th:errors="*{lastName}"></span>
+
 
                         </div>
                     </div>
@@ -37,7 +37,7 @@
                     <label>Date of birthday: </label>
                     <div class="row">
                         <div class="col-2">
-                            <input type="date" class="d-block mb-3 form-control" name="dateBirth" th:field="${patient.DateBirth}">
+                            <input type="date" class="d-block mb-3 form-control" name="dateBirth" th:field="*{dateBirth}">
                         </div>
                     </div>
 
@@ -63,12 +63,12 @@
                     </div>
 
 
-                    <label class="d-block">Score : <span id="scoreValue" th:text="${patient.Score}"></span></label>
+                    <label class="d-block">Score : <span id="scoreValue" th:text="*{score}"></span></label>
 
                     <div class="row">
                         <div class="col-3">
-                            <input type="range" class="form-range" min="0" max="10000" id="customRange1" th:field="${patient.Score}" oninput="updateScoreValue(this.value)">
-                            <span th:errors="${patient.Score}"></span>
+                            <input type="range" class="form-range" min="0" max="10000" id="customRange1" th:field="*{score}" oninput="updateScoreValue(this.value)">
+                            <span th:errors="*{score}"></span>
                         </div>
                     </div>
 

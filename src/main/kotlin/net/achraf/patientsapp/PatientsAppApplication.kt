@@ -21,16 +21,16 @@ class PatientsAppApplication {
         return CommandLineRunner {
 
                      var p1 = Patient()
-                     p1.Name = "Lamarti"
-                     p1.LastName = "Insaf"
-                     p1.Score = 4562
+                     p1.name = "Lamarti"
+                     p1.lastName = "Insaf"
+                     p1.score = 4562
 
                      val p2 = Patient(null, "Boudoudou", "Haytam", LocalDate.now(),  true, 1236)
 
                     var p3 = Patient()
-                    p3.Name = "Tmoulik"
-                    p3.LastName = "Hamza"
-                    p2.Score = 789
+                    p3.name = "Tmoulik"
+                    p3.lastName = "Hamza"
+                    p2.score = 789
 
                     /*patientRepository.save(p1)
                     patientRepository.save(p2)*/
@@ -43,7 +43,7 @@ class PatientsAppApplication {
                         println(String.format("\t %-10s %-10s %20s  %10s %5s", "Name", "LastName", "Date of birth", "Score", "Sick"))
                         println("\t- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -")
                         patients.forEach{
-                            println(String.format("\t %-10s %-10s %-3ta %-3td %-9tB  %-5tY  %-6d %-5b", it.Name, it.LastName, it.DateBirth,it.DateBirth, it.DateBirth, it.DateBirth, it.Score, it.Malade))
+                            println(String.format("\t %-10s %-10s %-3ta %-3td %-9tB  %-5tY  %-6d %-5b", it.name, it.lastName, it.dateBirth,it.dateBirth, it.dateBirth, it.dateBirth, it.score, it.Malade))
                         }
                         println("\t- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -")
 

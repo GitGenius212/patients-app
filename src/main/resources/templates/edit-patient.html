@@ -18,23 +18,23 @@
         <label>Name: </label>
         <div class="row">
           <div class="col-2">
-            <input type="text" class="d-block mb-3 form-control"  th:value="${patient.Name}" placeholder="Enter your name..." name="name">
-
+            <input type="text" class="d-block mb-3 form-control"  th:field="*{name}" placeholder="Enter your name..." name="name">
+            <td th:errors="*{name}" class="text-danger">Name Error</td>
           </div>
         </div>
 
         <label>Last name: </label>
         <div class="row">
           <div class="col-2">
-            <input type="text" class="d-block mb-3 form-control" th:value="${patient.LastName}" placeholder="Enter your last name..." name="lastName">
-
+            <input type="text" class="d-block mb-3 form-control" th:field="*{lastName}" placeholder="Enter your last name..." name="lastName">
+            <span th:errors="*{lastName}"></span>
           </div>
         </div>
 
         <label>Date of birthday: </label>
         <div class="row">
           <div class="col-2">
-            <input type="date" class="d-block mb-3 form-control" name="dateBirth" th:field="${patient.DateBirth}">
+            <input type="date" class="d-block mb-3 form-control" name="dateBirth" th:field="*{dateBirth}">
           </div>
         </div>
 
@@ -60,11 +60,12 @@
         </div>
 
 
-        <label class="d-block">Score : <span id="scoreValue" th:text="${patient.Score}"></span></label>
+        <label class="d-block">Score : <span id="scoreValue" th:text="*{score}"></span></label>
 
         <div class="row">
           <div class="col-3">
-            <input type="range" class="form-range" min="0" max="10000" id="customRange1" th:field="${patient.Score}" oninput="updateScoreValue(this.value)">
+            <input type="range" class="form-range" min="0" max="10000" id="customRange1" th:field="*{score}" oninput="updateScoreValue(this.value)">
+            <span th:errors="*{score}"></span>
           </div>
         </div>
 

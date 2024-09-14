@@ -8,6 +8,7 @@ import org.springframework.data.domain.PageRequest
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.validation.BindingResult
+import org.springframework.validation.annotation.Validated
 import org.springframework.web.bind.annotation.*
 
 
@@ -62,10 +63,11 @@ class PatientController(private val patientRepository: PatientRepository) {
     }
 
     @PostMapping("/addPatient")
-    fun addPatient( @Valid patient: Patient, result : BindingResult) : String {
+    fun addPatient( @Valid  patient: Patient, result : BindingResult) : String {
         //println("Patient ->   " + patient)
         if (result.hasErrors()) {
             println("Errors")
+            result.allErrors.forEach{ error ->  println(error) }
             return "new-participants"
         }
         patientRepository.save(patient)
@@ -73,11 +75,17 @@ class PatientController(private val patientRepository: PatientRepository) {
     }
 
     @PutMapping("/patientEdited")
-    fun patientEdited(patientUpdated: Patient, id: Long) : String {
+    fun patientEdited(@Valid patientUpdated: Patient, id: Long, result : BindingResult) : String {
         /*val id : Long? = patient.identifiant*/
+
         println(id)
-        println("Patient ->   " + patientUpdated.LastName)
-        val patient : Patient = patientRepository.getReferenceById(id)
+        println("Patient ->   " + patientUpdated.lastName)
+        if (result.hasErrors()) {
+            println("Errors in updtating patient")
+            result.allErrors.forEach{ error ->  println(error) }
+            return "redirect:/index"
+        }
+
         patientRepository.save(patientUpdated)
         return "redirect:/index"
     }
