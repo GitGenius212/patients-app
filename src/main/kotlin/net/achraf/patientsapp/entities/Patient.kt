@@ -3,7 +3,9 @@ package net.achraf.patientsapp.entities
 import jakarta.persistence.*
 import jakarta.validation.constraints.Min
 import jakarta.validation.constraints.NotBlank
+import jakarta.validation.constraints.NotEmpty
 import jakarta.validation.constraints.NotNull
+import jakarta.validation.constraints.PastOrPresent
 import jakarta.validation.constraints.Size
 import org.springframework.format.annotation.DateTimeFormat
 import java.time.LocalDate
@@ -16,15 +18,16 @@ class Patient(
     private val id : Long? = null,
 
     @field:NotBlank(message = "Le prénom est requis")
-    @field:Size(min=2, max = 50)
+    @field:Size(min=2, max = 50, message = "La taille doit être comprise entre 2 et 50")
       var name : String = "no name",
 
     @field:NotBlank(message = "Le nom de famille est requis")
-    @field:Size(min=2, max = 50)
+    @field:Size(min=2, max = 50, message = "La taille doit être comprise entre 2 et 50")
      var lastName : String = "no lastName",
 
     @Temporal(TemporalType.DATE)
     @get:DateTimeFormat(pattern = "yyyy-MM-dd", iso = DateTimeFormat.ISO.DATE)
+    @field:NotNull(message = "Veuillez remplir la date")
      var dateBirth : LocalDate = LocalDate.now(),
 
     private var malade : Boolean = false,

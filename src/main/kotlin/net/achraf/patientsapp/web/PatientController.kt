@@ -74,16 +74,16 @@ class PatientController(private val patientRepository: PatientRepository) {
         return "redirect:/index"
     }
 
-    @PutMapping("/patientEdited")
-    fun patientEdited(@Valid patientUpdated: Patient, id: Long, result : BindingResult) : String {
+    @PostMapping("/patientEdited")
+    fun patientEdited(@Valid patientUpdated: Patient, result : BindingResult, id: Long) : String {
         /*val id : Long? = patient.identifiant*/
 
-        println(id)
+        println("Bienvenue" + id)
         println("Patient ->   " + patientUpdated.lastName)
         if (result.hasErrors()) {
             println("Errors in updtating patient")
             result.allErrors.forEach{ error ->  println(error) }
-            return "redirect:/index"
+            return "edit-patient"
         }
 
         patientRepository.save(patientUpdated)

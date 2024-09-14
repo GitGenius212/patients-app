@@ -1,1 +1,5 @@
 Lien du problème résolue: https://stackoverflow.com/questions/48614773/spring-boot-validation-annotations-valid-and-notblank-not-working?answertab=modifieddesc#tab-top
+
+le spring-security pour la validation n'accepte que le @GetMapping pour method="get" et @PostMapping pour method="post". Ell refuse les autres comme @PutMapping pour methode="put" ou @DeleteMapping pour method="delete"
+
+https://stackoverflow.com/questions/33663801/how-do-i-customize-default-error-message-from-spring-valid-validation?answertab=scoredesc#tab-top

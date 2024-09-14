@@ -19,7 +19,7 @@
                     <div class="row">
                         <div class="col-2">
                             <input type="text" class="d-block mb-3 form-control"  placeholder="Enter your name..." name="name">
-                            <td th:errors="*{name}" class="text-danger">Name Error</td>
+                            <span th:errors="*{name}" class="text-danger">Name Error</span>
 
                         </div>
                     </div>
@@ -28,7 +28,7 @@
                     <div class="row">
                         <div class="col-2">
                             <input type="text" class="d-block mb-3 form-control"  placeholder="Enter your last name..." name="lastName">
-                            <span th:errors="*{lastName}"></span>
+                            <span th:errors="*{lastName}" class="text-danger"></span>
 
 
                         </div>
@@ -38,6 +38,7 @@
                     <div class="row">
                         <div class="col-2">
                             <input type="date" class="d-block mb-3 form-control" name="dateBirth" th:field="*{dateBirth}">
+                            <span th:errors="*{dateBirth}" class="text-danger"></span>
                         </div>
                     </div>
 
@@ -68,7 +69,7 @@
                     <div class="row">
                         <div class="col-3">
                             <input type="range" class="form-range" min="0" max="10000" id="customRange1" th:field="*{score}" oninput="updateScoreValue(this.value)">
-                            <span th:errors="*{score}"></span>
+                            <span th:errors="*{score}" class="text-danger"></span>
                         </div>
                     </div>
 
