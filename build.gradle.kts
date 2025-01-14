@@ -20,6 +20,7 @@ repositories {
 }
 
 dependencies {
+    implementation("org.thymeleaf.extras:thymeleaf-extras-springsecurity6")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
     // https://mvnrepository.com/artifact/org.webjars/bootstrap
