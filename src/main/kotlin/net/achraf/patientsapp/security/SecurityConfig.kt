@@ -32,6 +32,9 @@ class SecurityConfig {
             .formLogin(Customizer.withDefaults())
             .authorizeHttpRequests {
                 it.requestMatchers("/deletePatient/**").hasRole("ADMIN")
+                it.requestMatchers("/index").hasRole("ADMIN")
+                it.requestMatchers("/save").hasRole("ADMIN")
+                it.requestMatchers("/edit").hasRole("ADMIN")
                 it.anyRequest().authenticated()
 
             }
