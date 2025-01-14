@@ -10,21 +10,21 @@
 <body>
     <div class="m-3" layout:fragment="content">
 
-        <div class="card">
+        <div class="card mb-5">
             <form th:action="@{addPatient}" method="post" th:object="${patient}">
-            <div class="card-header"><h1>Add new participant</h1></div>
+            <div class="card-header"><h1>Ajouter un nouveau participant</h1></div>
             <div class="card-body" >
 
-                    <label>Name: </label>
+                    <label>Prénom</label>
                     <div class="row">
                         <div class="col-2">
                             <input type="text" class="d-block mb-3 form-control"  placeholder="Enter your name..." name="name">
-                            <span th:errors="*{name}" class="text-danger">Name Error</span>
+                            <span th:errors="*{name}" class="text-danger">Erreur de nom</span>
 
                         </div>
                     </div>
 
-                    <label>Last name: </label>
+                    <label>Nom de famille</label>
                     <div class="row">
                         <div class="col-2">
                             <input type="text" class="d-block mb-3 form-control"  placeholder="Enter your last name..." name="lastName">
@@ -34,7 +34,7 @@
                         </div>
                     </div>
 
-                    <label>Date of birthday: </label>
+                    <label>Année d'anniversaire </label>
                     <div class="row">
                         <div class="col-2">
                             <input type="date" class="d-block mb-3 form-control" name="dateBirth" th:field="*{dateBirth}">
@@ -48,7 +48,7 @@
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="malade" id="flexRadioDefault1" th:value="true" th:field="${patient.Malade}">
                                 <label class="form-check-label" for="flexRadioDefault1" >
-                                    Yes
+                                    Oui
                                 </label>
                             </div>
                         </div>
@@ -57,7 +57,7 @@
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="malade" id="flexRadioDefault2" th:value="false" th:field="${patient.Malade}" checked>
                                 <label class="form-check-label" for="flexRadioDefault2" >
-                                    No
+                                    Non
                                 </label>
                             </div>
                         </div>
@@ -83,7 +83,7 @@
         </div>
 
             <div class="card-footer">
-                <button class="btn btn-primary" type="submit">Add</button>
+                <button class="btn btn-primary" type="submit">Ajouter</button>
             </div>
             </form>
         </div>

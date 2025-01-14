@@ -14,14 +14,14 @@
         <div class="card-header">Liste des patients</div>
         <div class="card-body">
             <form th:action="@{/index}" method="get">
-                <label>Keyword</label>
+                <label>Mot</label>
                 <input type="text" name="keyword" th:value="${keyword}"> <!-- Préparer les données dans le modèle à chaque raffraichissement -->
-                <button class="btn btn-outline-primary">Search</button>
+                <button class="btn btn-outline-primary">Rechercher</button>
             </form>
             <table class="table">
                 <thead>
                 <tr>
-                    <th>ID</th>  <th>Name</th> <th>LastName</th> <th>Date of birthday</th> <th>Sick</th> <th>Score</th>
+                    <th>ID</th>  <th>Prénom</th> <th>Nom de famille</th> <th>Date d'anniversaire</th> <th>Malade</th> <th>Score</th>
                 </tr>
                 </thead>
                 <tbody>

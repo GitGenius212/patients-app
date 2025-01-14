@@ -13,10 +13,10 @@
   <div class="card">
     <form th:action="@{patientEdited(id=${patient.getIdentifiant()})}" th:method="post" th:object="${patient}">
 
-      <div class="card-header"><h1 class="d-inline">Edit participant </h1> <span class="fs-1" th:text="${'#' + patient.Identifiant}"></span> </div>
+      <div class="card-header"><h1 class="d-inline">Modifier le participant </h1> <span class="fs-1" th:text="${'#' + patient.Identifiant}"></span> </div>
       <div class="card-body" >
 
-        <label>Name: </label>
+        <label>Prénom: </label>
         <div class="row">
           <div class="col-2">
             <input type="text" class="d-block mb-3 form-control"  th:field="*{name}" placeholder="Enter your name..." name="name">
@@ -24,7 +24,7 @@
           </div>
         </div>
 
-        <label>Last name: </label>
+        <label>Nom de famille: </label>
         <div class="row">
           <div class="col-2">
             <input type="text" class="d-block mb-3 form-control" th:field="*{lastName}" placeholder="Enter your last name..." name="lastName">
@@ -32,7 +32,7 @@
           </div>
         </div>
 
-        <label>Date of birthday: </label>
+        <label>Année d'anniversaire: </label>
         <div class="row">
           <div class="col-2">
             <input type="date" class="d-block mb-3 form-control" name="dateBirth" th:field="*{dateBirth}">
@@ -40,13 +40,13 @@
           </div>
         </div>
 
-        <label>Sick: </label>
+        <label>Malade: </label>
         <div class="row g-3">
           <div class=" col-auto me-auto">
             <div class="form-check">
               <input class="form-check-input" type="radio" name="malade" id="flexRadioDefault1" th:value="true" th:field="${patient.Malade}">
               <label class="form-check-label" for="flexRadioDefault1" >
-                Yes
+                  Oui
               </label>
             </div>
           </div>
@@ -55,7 +55,7 @@
             <div class="form-check">
               <input class="form-check-input" type="radio" name="malade" id="flexRadioDefault2" th:value="false" th:field="${patient.Malade}" checked>
               <label class="form-check-label" for="flexRadioDefault2" >
-                No
+                Non
               </label>
             </div>
           </div>
@@ -81,7 +81,7 @@
       </div>
 
       <div class="card-footer">
-        <button class="btn btn-primary" type="submit">Save</button>
+        <button class="btn btn-primary" type="submit">Enregistrer</button>
       </div>
     </form>
   </div>

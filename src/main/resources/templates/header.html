@@ -7,7 +7,7 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark" th:fragment="header">
     <div class="container-fluid">
-        <a class="navbar-brand" th:href="@{/}" >Hospital-app</a>
+        <a class="navbar-brand" th:href="@{/}" >Application d'une hôpital</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -17,19 +17,19 @@
                     <a class="nav-link active" aria-current="page" th:href="@{/index}">Patients</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
+                    <a class="nav-link" href="#">Fonctionnalité</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
+                    <a class="nav-link" href="#">Prix</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Actions Link
+                        Paramètres
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a class="dropdown-item" th:href="@{/save}">Add participant</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        <li><a class="dropdown-item" th:href="@{/save}">Ajouter un nouveau participant</a></li>
+                        <!-- <li><a class="dropdown-item" href="#">Another action</a></li> -->
+                        <!-- <li><a class="dropdown-item" href="#">Something else here</a></li> -->
                     </ul>
                 </li>
             </ul>
