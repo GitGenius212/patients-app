@@ -12,7 +12,7 @@ import java.time.LocalDate
 import java.util.*
 
 @Entity
-@Table(name = "PATIENTS")
+@Table(name = "patients_app")
 class Patient(
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private val id : Long? = null,

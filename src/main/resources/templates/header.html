@@ -16,7 +16,7 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li  sec:authorize="hasRole('ROLE_ADMIN')" class="nav-item">
-                    <a class="nav-link active" aria-current="page" th:href="@{/index}">Patients</a>
+                    <a class="nav-link " aria-current="page" th:href="@{/index}">Patients</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Fonctionnalités</a>
@@ -29,7 +29,7 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
                         Paramètres
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a class="dropdown-item" th:href="@{/save}">Ajouter un nouveau participant</a></li>
+                        <li><a class="dropdown-item" th:href="@{/save}">Ajouter un nouveau patient</a></li>
                         <!-- <li><a class="dropdown-item" href="#">Another action</a></li> -->
                         <!-- <li><a class="dropdown-item" href="#">Something else here</a></li> -->
                     </ul>

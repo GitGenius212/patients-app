@@ -32,11 +32,11 @@ class PatientsAppApplication {
                     p3.lastName = "Hamza"
                     p2.score = 789
 
-                    /* 
+
                     patientRepository.save(p1)
                     patientRepository.save(p2)
                     patientRepository.save(p3)
-                    */
+
                     val patients: Page<Patient> = patientRepository.findAll(PageRequest.of(0,2))
 
 
